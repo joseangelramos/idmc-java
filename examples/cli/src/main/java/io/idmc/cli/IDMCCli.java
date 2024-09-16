@@ -70,24 +70,27 @@ public class IDMCCli {
             String command = subArgs[0];
             switch (command) {
                 case CliUtils.CATALOG:
-                    CatalogCli.handle(cmd, apiClient);
+                    //CatalogCli.handle(cmd, apiClient);
                     break;
                 case CliUtils.SCHEMA:
-                    SchemaCli.handle(cmd, apiClient);
+                    //SchemaCli.handle(cmd, apiClient);
                     break;
                 case CliUtils.VOLUME:
-                    VolumeCli.handle(cmd, apiClient);
+                    //VolumeCli.handle(cmd, apiClient);
                     break;
                 case CliUtils.TABLE:
-                    TableCli.handle(cmd, apiClient);
+                    //TableCli.handle(cmd, apiClient);
                     break;
                 case CliUtils.FUNCTION:
-                    FunctionCli.handle(cmd, apiClient);
+                    //FunctionCli.handle(cmd, apiClient);
                     break;
                 default:
                     CliUtils.printHelp();
             }
-        } catch (ParseException | JsonProcessingException e) {
+         } catch (Exception e) {
+                throw new RuntimeException(e);
+         }
+        /*} catch (ParseException | JsonProcessingException e) {
             System.out.println("Error occurred while parsing the command. " +
                     "Please check the command and try again. " + e.getMessage());
             CliUtils.printHelp();
@@ -96,7 +99,7 @@ public class IDMCCli {
                     + (e.getCause() != null ? e.getCause().getMessage() : ""));
         } catch (ApiException e) {
             throw new RuntimeException(e);
-        }
+        } */
     }
 
     private static boolean validateCommand(CommandLine cmd) {

@@ -13,6 +13,8 @@ import de.vandermeer.skb.interfaces.transformers.textformat.TextAlignment;
 import de.vandermeer.skb.interfaces.translators.HtmlElementTranslator;
 import io.delta.kernel.ScanBuilder;
 import io.delta.kernel.data.Row;
+
+
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.Option;
 
@@ -306,6 +308,7 @@ public class CliUtils {
         json.remove(CliParams.FULL_NAME.getServerParam());
     }
 
+    /* 
     public static Map<String, String> extractProperties(ObjectMapper objectMapper, JSONObject node) {
         // Retrieve the escaped JSON string
         if (node.has(CreateTable.JSON_PROPERTY_PROPERTIES)) {
@@ -325,8 +328,8 @@ public class CliUtils {
             }
         }
         return null;
-    }
-
+    }*/
+/*
     private static String setPrecisionAndScale(ColumnInfo columnInfo, String typeText, String params) {
         if (params != null) {
             String[] paramArray = params.split(",");
@@ -341,7 +344,7 @@ public class CliUtils {
         }
         return "";
     }
-
+ */
     /**
      * Method to convert the columns string to a list of ColumnInfo objects
      * the columns string is expected to be in the format:
@@ -350,7 +353,7 @@ public class CliUtils {
      * @param columnsString
      * @return
      */
-    public static List<ColumnInfo> parseColumns(String columnsString) {
+    /*public static List<ColumnInfo> parseColumns(String columnsString) {
         List<ColumnInfo> columns = new ArrayList<>();
         Pattern pattern = Pattern.compile("(\\w+)\\s+(\\w+)(\\(([^)]+)\\))?");
         Matcher matcher = pattern.matcher(columnsString);
@@ -380,7 +383,7 @@ public class CliUtils {
         }
 
         return columns;
-    }
+    }*/
     static Map<String, String> typeNameVsTypeText = new HashMap<String, String>() {{
         put("LONG", "bigint");
         put("SHORT", "smallint");
@@ -395,7 +398,7 @@ public class CliUtils {
     Input parameters would be given in the form
     --input_params "param1 INT, param2 STRING"
      */
-    public static FunctionParameterInfos parseInputParams(JSONObject json) {
+    /*public static FunctionParameterInfos parseInputParams(JSONObject json) {
         String[] inputParams = json.getString(CliParams.INPUT_PARAMS.getServerParam()).split(",");
         List<FunctionParameterInfo> parameterInfos = new ArrayList<>();
         for (int i = 0; i < inputParams.length; i++) {
@@ -412,6 +415,6 @@ public class CliUtils {
         }
         json.remove(CliParams.INPUT_PARAMS.getServerParam());
         return new FunctionParameterInfos().parameters(parameterInfos);
-    }
+    }*/
 
 }
