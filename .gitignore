@@ -1,5 +1,9 @@
 target/
+
+# Intellij IDEA files
 .idea/
+*.iml
+
 .bsp/
 etc/logs/
 build/sbt-launch-*
